@@ -205,3 +205,18 @@ int NoABB::contaNos()
     
     return resultado;
 }
+
+bool NoABB::ehCheia()
+{
+    // Caso 1: Nó folha (sem filhos)
+    if (this->esq == NULL && this->dir == NULL)
+        return true;
+    
+    // Caso 2: Nó com dois filhos
+    if (this->esq != NULL && this->dir != NULL)
+        // Recursivamente verifica se as subárvores também são cheias
+        return this->esq->ehCheia() && this->dir->ehCheia();
+    
+    // Caso 3: Nó com apenas um filho (não é uma árvore cheia)
+    return false;
+}

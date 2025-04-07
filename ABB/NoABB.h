@@ -28,6 +28,7 @@ class NoABB
 		void imprimeVisualizacao(int n);
 		int soma();
 		int contaNos(); // Nova função para contar nós na subárvore
+		bool ehCheia();
 
 		// resolver no quadro por último
 		NoABB* remove(NoABB* no, int valor);

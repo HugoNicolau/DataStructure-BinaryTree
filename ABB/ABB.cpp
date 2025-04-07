@@ -97,3 +97,11 @@ float ABB::media()
         
     return static_cast<float>(totalSoma) / totalNos;
 }
+
+bool ABB::ehCheia()
+{
+    if (this->vazia())
+        return true;  // Uma árvore vazia é considerada cheia por definição
+    
+    return this->raiz->ehCheia();
+}
