@@ -174,3 +174,18 @@ void NoABB::imprimeVisualizacao(int n)
 	if (this->dir != NULL)
 		this->dir->imprimeVisualizacao(n + 1);
 }
+
+int NoABB::soma()
+{
+    int resultado = this->valor; // Inicia com o valor do nó atual
+    
+    // Adiciona os valores da subárvore esquerda
+    if (this->esq != NULL)
+        resultado += this->esq->soma();
+    
+    // Adiciona os valores da subárvore direita
+    if (this->dir != NULL)
+        resultado += this->dir->soma();
+    
+    return resultado;
+}

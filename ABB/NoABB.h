@@ -26,6 +26,7 @@ class NoABB
 		NoABB* busca(int valor);
 		void imprimeOrdemCrescente();
 		void imprimeVisualizacao(int n);
+		int soma();
 
 		// resolver no quadro por último
 		NoABB* remove(NoABB* no, int valor);

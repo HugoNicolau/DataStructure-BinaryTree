@@ -75,3 +75,10 @@ void ABB::destroiArvore()
 	delete this->raiz;
 	this->raiz = NULL;
 }
+
+int ABB::soma()
+{
+    if (this->vazia())
+        return 0;
+    return this->raiz->soma();
+}
