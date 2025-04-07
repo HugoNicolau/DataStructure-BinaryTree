@@ -105,3 +105,15 @@ bool ABB::ehCheia()
     
     return this->raiz->ehCheia();
 }
+
+bool ABB::ehCompleta()
+{
+    if (this->vazia())
+        return true;  // Uma árvore vazia é considerada completa por definição
+        
+    // Precisamos contar o número total de nós
+    int numNos = this->raiz->contaNos();
+    
+    // Começamos com o índice 0 (raiz) e verificamos se a árvore é completa
+    return this->raiz->ehCompleta(0, numNos);
+}

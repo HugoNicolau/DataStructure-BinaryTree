@@ -29,6 +29,8 @@ class NoABB
 		int soma();
 		int contaNos(); // Nova função para contar nós na subárvore
 		bool ehCheia();
+		bool ehCompleta(int index, int numNos);
+		int altura();
 
 		// resolver no quadro por último
 		NoABB* remove(NoABB* no, int valor);

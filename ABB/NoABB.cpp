@@ -220,3 +220,40 @@ bool NoABB::ehCheia()
     // Caso 3: Nó com apenas um filho (não é uma árvore cheia)
     return false;
 }
+
+int NoABB::altura()
+{
+    // Altura da subárvore esquerda
+    int alturaEsq = 0;
+    if (this->esq != NULL)
+        alturaEsq = this->esq->altura();
+        
+    // Altura da subárvore direita
+    int alturaDir = 0;
+    if (this->dir != NULL)
+        alturaDir = this->dir->altura();
+        
+    // Retorna a maior altura + 1 (para incluir o nó atual)
+    return (alturaEsq > alturaDir ? alturaEsq : alturaDir) + 1;
+}
+
+bool NoABB::ehCompleta(int index, int numNos)
+{
+    // Se o índice for maior que o número de nós, não é completa
+    if (index >= numNos)
+        return false;
+        
+    // Verifica recursivamente as subárvores
+    // O índice do filho esquerdo é 2*i + 1 e do filho direito é 2*i + 2
+    bool esqCompleta = true;
+    bool dirCompleta = true;
+    
+    if (this->esq != NULL)
+        esqCompleta = this->esq->ehCompleta(2*index + 1, numNos);
+        
+    if (this->dir != NULL)
+        dirCompleta = this->dir->ehCompleta(2*index + 2, numNos);
+        
+    // Ambas as subárvores devem ser completas
+    return esqCompleta && dirCompleta;
+}
