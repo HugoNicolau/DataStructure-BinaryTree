@@ -31,6 +31,7 @@ class NoABB
 		bool ehCheia();
 		bool ehCompleta(int index, int numNos);
 		int altura();
+		void imprimeIntervalo(int x, int y);
 
 		// resolver no quadro por último
 		NoABB* remove(NoABB* no, int valor);

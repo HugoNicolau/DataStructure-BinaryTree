@@ -117,3 +117,12 @@ bool ABB::ehCompleta()
     // Começamos com o índice 0 (raiz) e verificamos se a árvore é completa
     return this->raiz->ehCompleta(0, numNos);
 }
+
+void ABB::imprimeIntervalo(int x, int y)
+{
+    if (this->vazia())
+        return;
+        
+    this->raiz->imprimeIntervalo(x, y);
+    cout << endl;
+}

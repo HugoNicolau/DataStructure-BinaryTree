@@ -257,3 +257,22 @@ bool NoABB::ehCompleta(int index, int numNos)
     // Ambas as subárvores devem ser completas
     return esqCompleta && dirCompleta;
 }
+
+void NoABB::imprimeIntervalo(int x, int y)
+{
+    // Usando o princípio de percurso em ordem para visitar os nós em ordem crescente
+    
+    // 1. Se o valor atual for maior ou igual a x, explore a subárvore esquerda
+    // (pois pode conter valores no intervalo)
+    if (this->valor >= x && this->esq != NULL)
+        this->esq->imprimeIntervalo(x, y);
+    
+    // 2. Se o valor atual estiver no intervalo [x, y], imprima-o
+    if (this->valor >= x && this->valor <= y)
+        cout << this->valor << " ";
+    
+    // 3. Se o valor atual for menor ou igual a y, explore a subárvore direita
+    // (pois pode conter valores no intervalo)
+    if (this->valor <= y && this->dir != NULL)
+        this->dir->imprimeIntervalo(x, y);
+}
