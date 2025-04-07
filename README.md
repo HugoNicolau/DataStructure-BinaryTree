@@ -1,1 +1,1 @@
-# DataStructure-BynaryTree
+# DataStructure-BinaryTree
