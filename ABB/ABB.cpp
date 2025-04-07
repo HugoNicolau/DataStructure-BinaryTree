@@ -126,3 +126,11 @@ void ABB::imprimeIntervalo(int x, int y)
     this->raiz->imprimeIntervalo(x, y);
     cout << endl;
 }
+
+bool ABB::estritamenteBinaria()
+{
+    if (this->vazia())
+        return true;  // Uma árvore vazia é considerada estritamente binária por definição
+    
+    return this->raiz->estritamenteBinaria();
+}

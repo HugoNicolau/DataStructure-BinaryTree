@@ -276,3 +276,17 @@ void NoABB::imprimeIntervalo(int x, int y)
     if (this->valor <= y && this->dir != NULL)
         this->dir->imprimeIntervalo(x, y);
 }
+
+bool NoABB::estritamenteBinaria()
+{
+    // Caso 1: Nó folha (sem filhos)
+    if (this->esq == NULL && this->dir == NULL)
+        return true;
+    
+    // Caso 2: Nó com dois filhos - verifica recursivamente as subárvores
+    if (this->esq != NULL && this->dir != NULL)
+        return this->esq->estritamenteBinaria() && this->dir->estritamenteBinaria();
+    
+    // Caso 3: Nó com apenas um filho - não é estritamente binária
+    return false;
+}

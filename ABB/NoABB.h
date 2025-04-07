@@ -32,6 +32,7 @@ class NoABB
 		bool ehCompleta(int index, int numNos);
 		int altura();
 		void imprimeIntervalo(int x, int y);
+		bool estritamenteBinaria();
 
 		// resolver no quadro por último
 		NoABB* remove(NoABB* no, int valor);
