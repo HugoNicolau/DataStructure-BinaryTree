@@ -290,3 +290,24 @@ bool NoABB::estritamenteBinaria()
     // Caso 3: Nó com apenas um filho - não é estritamente binária
     return false;
 }
+
+int NoABB::maioresQue(int valor)
+{
+    int contador = 0;
+    
+    // Verifica se o nó atual tem valor maior que o parâmetro
+    if (this->valor > valor)
+        contador = 1;
+    else
+        contador = 0;
+    
+    // Verifica a subárvore esquerda
+    if (this->esq != NULL)
+        contador += this->esq->maioresQue(valor);
+    
+    // Verifica a subárvore direita
+    if (this->dir != NULL)
+        contador += this->dir->maioresQue(valor);
+    
+    return contador;
+}

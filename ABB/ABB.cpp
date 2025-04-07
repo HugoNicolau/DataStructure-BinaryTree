@@ -134,3 +134,11 @@ bool ABB::estritamenteBinaria()
     
     return this->raiz->estritamenteBinaria();
 }
+
+int ABB::maioresQue(int valor)
+{
+    if (this->vazia())
+        return 0;
+    
+    return this->raiz->maioresQue(valor);
+}
