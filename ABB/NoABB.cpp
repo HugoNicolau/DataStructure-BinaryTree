@@ -337,3 +337,17 @@ void NoABB::somaENosNoNivel(int nivel, int nivelAtual, int& soma, int& contadorN
     // Se o nível atual for maior que o desejado, não há mais o que fazer
     // (isso não deve acontecer na chamada recursiva normal)
 }
+
+void NoABB::imprimeAlturaNos()
+{
+    // Imprime o valor e a altura do nó atual
+    cout << "No " << this->valor << ": altura = " << this->altura() << endl;
+    
+    // Percorre a subárvore esquerda
+    if (this->esq != NULL)
+        this->esq->imprimeAlturaNos();
+    
+    // Percorre a subárvore direita
+    if (this->dir != NULL)
+        this->dir->imprimeAlturaNos();
+}

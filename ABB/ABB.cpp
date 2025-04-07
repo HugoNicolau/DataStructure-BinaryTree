@@ -167,3 +167,15 @@ float ABB::mediaNivel(int nivel)
     // Calcula e retorna a média
     return static_cast<float>(soma) / contadorNos;
 }
+
+void ABB::alturaNos()
+{
+    if (this->vazia())
+    {
+        cout << "Arvore vazia" << endl;
+        return;
+    }
+    
+    cout << "Altura dos nos da arvore:" << endl;
+    this->raiz->imprimeAlturaNos();
+}

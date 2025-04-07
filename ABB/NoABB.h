@@ -35,6 +35,7 @@ class NoABB
 		bool estritamenteBinaria();
 		int maioresQue(int valor);
 		void somaENosNoNivel(int nivel, int nivelAtual, int& soma, int& contadorNos);
+		void imprimeAlturaNos();
 
 		// resolver no quadro por último
 		NoABB* remove(NoABB* no, int valor);
