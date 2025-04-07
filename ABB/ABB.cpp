@@ -179,3 +179,15 @@ void ABB::alturaNos()
     cout << "Altura dos nos da arvore:" << endl;
     this->raiz->imprimeAlturaNos();
 }
+
+bool ABB::ehPerfeita()
+{
+    if (this->vazia())
+        return true;  // Uma árvore vazia é considerada perfeita por definição
+    
+    // Calculamos a altura da árvore para saber qual deve ser o nível das folhas
+    int altura = this->raiz->altura() - 1;  // Ajuste: altura - 1 para obter o último nível
+    
+    // Verificamos se a árvore é perfeita
+    return this->raiz->ehPerfeita(altura, 0);
+}

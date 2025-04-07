@@ -36,6 +36,7 @@ class NoABB
 		int maioresQue(int valor);
 		void somaENosNoNivel(int nivel, int nivelAtual, int& soma, int& contadorNos);
 		void imprimeAlturaNos();
+		bool ehPerfeita(int altura, int nivel);
 
 		// resolver no quadro por último
 		NoABB* remove(NoABB* no, int valor);

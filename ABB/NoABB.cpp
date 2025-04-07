@@ -351,3 +351,18 @@ void NoABB::imprimeAlturaNos()
     if (this->dir != NULL)
         this->dir->imprimeAlturaNos();
 }
+
+bool NoABB::ehPerfeita(int altura, int nivel)
+{
+    // Caso 1: Nó folha - deve estar no último nível
+    if (this->esq == NULL && this->dir == NULL)
+        return (nivel == altura);
+    
+    // Caso 2: Nó com apenas um filho - não é perfeita
+    if (this->esq == NULL || this->dir == NULL)
+        return false;
+    
+    // Caso 3: Nó com dois filhos - ambas subárvores devem ser perfeitas
+    return this->esq->ehPerfeita(altura, nivel + 1) && 
+           this->dir->ehPerfeita(altura, nivel + 1);
+}

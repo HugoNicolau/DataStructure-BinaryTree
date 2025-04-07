@@ -32,6 +32,7 @@ class ABB
         int maioresQue(int valor);         // Conta nós com valor maior que o parâmetro
         float mediaNivel(int nivel);       // Calcula a média dos valores no nível especificado
         void alturaNos();                  // Imprime a altura de cada nó da árvore
+        bool ehPerfeita();                 // Verifica se a árvore é perfeita (todos os níveis completos)
 };
 
 #endif
