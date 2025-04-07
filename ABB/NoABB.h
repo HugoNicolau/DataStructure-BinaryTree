@@ -34,6 +34,7 @@ class NoABB
 		void imprimeIntervalo(int x, int y);
 		bool estritamenteBinaria();
 		int maioresQue(int valor);
+		void somaENosNoNivel(int nivel, int nivelAtual, int& soma, int& contadorNos);
 
 		// resolver no quadro por último
 		NoABB* remove(NoABB* no, int valor);

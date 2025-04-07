@@ -142,3 +142,28 @@ int ABB::maioresQue(int valor)
     
     return this->raiz->maioresQue(valor);
 }
+
+float ABB::mediaNivel(int nivel)
+{
+    // Árvore vazia ou nível negativo, retorna 0
+    if (this->vazia() || nivel < 0)
+        return 0.0f;
+    
+    // Se for o nível 0 (raiz), retorna o valor da raiz
+    if (nivel == 0)
+        return static_cast<float>(this->raiz->getValor());
+    
+    // Variáveis para armazenar a soma e a contagem de nós no nível
+    int soma = 0;
+    int contadorNos = 0;
+    
+    // Calcula a soma e conta os nós no nível especificado
+    this->raiz->somaENosNoNivel(nivel, 0, soma, contadorNos);
+    
+    // Se não houver nós no nível especificado, retorna 0
+    if (contadorNos == 0)
+        return 0.0f;
+    
+    // Calcula e retorna a média
+    return static_cast<float>(soma) / contadorNos;
+}
