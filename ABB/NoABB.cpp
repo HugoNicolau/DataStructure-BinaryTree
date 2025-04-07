@@ -189,3 +189,19 @@ int NoABB::soma()
     
     return resultado;
 }
+
+int NoABB::contaNos()
+{
+    // Começa com 1 para o nó atual
+    int resultado = 1;
+    
+    // Adiciona contagem da subárvore esquerda
+    if (this->esq != NULL)
+        resultado += this->esq->contaNos();
+    
+    // Adiciona contagem da subárvore direita
+    if (this->dir != NULL)
+        resultado += this->dir->contaNos();
+    
+    return resultado;
+}

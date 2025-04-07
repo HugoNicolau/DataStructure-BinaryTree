@@ -27,6 +27,7 @@ class NoABB
 		void imprimeOrdemCrescente();
 		void imprimeVisualizacao(int n);
 		int soma();
+		int contaNos(); // Nova função para contar nós na subárvore
 
 		// resolver no quadro por último
 		NoABB* remove(NoABB* no, int valor);

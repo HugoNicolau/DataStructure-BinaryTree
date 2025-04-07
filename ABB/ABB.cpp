@@ -82,3 +82,18 @@ int ABB::soma()
         return 0;
     return this->raiz->soma();
 }
+
+float ABB::media()
+{
+    if (this->vazia())
+        return 0.0f;
+    
+    int totalSoma = this->raiz->soma();
+    int totalNos = this->raiz->contaNos();
+    
+    // Evitar divisão por zero, embora não deva ocorrer se a árvore não estiver vazia
+    if (totalNos == 0)
+        return 0.0f;
+        
+    return static_cast<float>(totalSoma) / totalNos;
+}
