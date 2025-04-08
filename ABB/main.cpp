@@ -71,9 +71,19 @@ int main()
 		cout << " 5: Imprimir ordem crescente" << endl;
 		cout << " 6: Destruir arvore" << endl;
 		cout << " 7: Encerrar o programa" << endl;
+		cout << " 8: Calcular soma dos valores" << endl;
+		cout << " 9: Calcular media dos valores" << endl;
+		cout << "10: Verificar se a arvore eh cheia" << endl;
+		cout << "11: Verificar se a arvore eh completa" << endl;
+		cout << "12: Imprimir intervalo de valores" << endl;
+		cout << "13: Verificar se a arvore eh estritamente binaria" << endl;
+		cout << "14: Contar nos maiores que um valor" << endl;
+		cout << "15: Calcular media de um nivel" << endl;
+		cout << "16: Mostrar altura dos nos" << endl;
+		cout << "17: Verificar se a arvore eh perfeita" << endl;
 		cout << endl << "Digite o numero correspondente: ";
 		op = lerNumero();
-		while (op < 1 || op > 7)
+		while (op < 1 || op > 17)
 		{
 			cout << "Operacao invalida. Tente novamente: ";
 			op = lerNumero();
@@ -125,6 +135,86 @@ int main()
 				cout << endl;
 				arv->destroiArvore();
 				cout << "Arvore destruida com sucesso. Pressione ENTER para continuar.";
+				lerNumero();
+				break;
+
+			case 8:
+				cout << endl;
+				cout << "Soma dos valores na arvore: " << arv->soma() << endl;
+				cout << "Pressione ENTER para continuar.";
+				lerNumero();
+				break;
+
+			case 9:
+				cout << endl;
+				cout << "Media dos valores na arvore: " << arv->media() << endl;
+				cout << "Pressione ENTER para continuar.";
+				lerNumero();
+				break;
+
+			case 10:
+				cout << endl;
+				cout << "A arvore " << (arv->ehCheia() ? "eh" : "NAO eh") << " cheia." << endl;
+				cout << "Pressione ENTER para continuar.";
+				lerNumero();
+				break;
+
+			case 11:
+				cout << endl;
+				cout << "A arvore " << (arv->ehCompleta() ? "eh" : "NAO eh") << " completa." << endl;
+				cout << "Pressione ENTER para continuar.";
+				lerNumero();
+				break;
+
+			case 12:
+				cout << "Digite o valor minimo do intervalo: ";
+				int x;
+				x = filtrarEntrada();
+				cout << "Digite o valor maximo do intervalo: ";
+				int y;
+				y = filtrarEntrada();
+				cout << endl << "Valores no intervalo [" << x << ", " << y << "]: ";
+				arv->imprimeIntervalo(x, y);
+				cout << "Pressione ENTER para continuar.";
+				lerNumero();
+				break;
+
+			case 13:
+				cout << endl;
+				cout << "A arvore " << (arv->estritamenteBinaria() ? "eh" : "NAO eh") << " estritamente binaria." << endl;
+				cout << "Pressione ENTER para continuar.";
+				lerNumero();
+				break;
+
+			case 14:
+				cout << "Digite o valor de referencia: ";
+				int valor;
+				valor = filtrarEntrada();
+				cout << endl << "Quantidade de nos com valor maior que " << valor << ": " << arv->maioresQue(valor) << endl;
+				cout << "Pressione ENTER para continuar.";
+				lerNumero();
+				break;
+
+			case 15:
+				cout << "Digite o nivel para calcular a media (0 = raiz): ";
+				int nivel;
+				nivel = filtrarEntrada();
+				cout << endl << "Media dos valores no nivel " << nivel << ": " << arv->mediaNivel(nivel) << endl;
+				cout << "Pressione ENTER para continuar.";
+				lerNumero();
+				break;
+
+			case 16:
+				cout << endl;
+				arv->alturaNos();
+				cout << "Pressione ENTER para continuar.";
+				lerNumero();
+				break;
+
+			case 17:
+				cout << endl;
+				cout << "A arvore " << (arv->ehPerfeita() ? "eh" : "NAO eh") << " perfeita." << endl;
+				cout << "Pressione ENTER para continuar.";
 				lerNumero();
 				break;
 

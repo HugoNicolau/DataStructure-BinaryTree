@@ -163,14 +163,14 @@ NoABB* NoABB::remove(NoABB* no, int valor)
 
 void NoABB::imprimeOrdemCrescente()
 {
-    // Primeiro visita a subárvore esquerda (todos os valores menores)
+    // Percorre a subárvore esquerda
     if (this->esq != NULL)
         this->esq->imprimeOrdemCrescente();
     
-    // Depois visita o nó atual (imprime seu valor)
+    // Imprime o valor do nó atual com um espaçador adequado
     cout << this->valor << " ";
     
-    // Por fim, visita a subárvore direita (todos os valores maiores)
+    // Percorre a subárvore direita
     if (this->dir != NULL)
         this->dir->imprimeOrdemCrescente();
 }

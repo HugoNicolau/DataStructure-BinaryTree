@@ -59,9 +59,15 @@ void ABB::imprimeEmLargura()
 
 void ABB::imprimeOrdemCrescente()
 {
-	if (!this->vazia())
-		this->raiz->imprimeOrdemCrescente();
-	cout << "\b\b  " << endl;
+    if (this->vazia())
+    {
+        cout << "[Árvore vazia]" << endl;
+        return;
+    }
+    
+    cout << "[";
+    this->raiz->imprimeOrdemCrescente();
+    cout << "]" << endl;
 }
 
 void ABB::imprimeVisualizacao()
