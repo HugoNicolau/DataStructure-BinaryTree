@@ -8,6 +8,7 @@ class NoABB
 		int valor;
 		NoABB* esq;
 		NoABB* dir;
+		int height;
 
 	public:
 
@@ -20,6 +21,9 @@ class NoABB
 		void setValor(int valor);
 		void setEsq(NoABB* no);
 		void setDir(NoABB* no);
+
+		int getHeight();
+		void setHeight(int height);
 
 		// exercícios
 		void insere(int valor);

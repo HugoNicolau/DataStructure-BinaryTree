@@ -5,9 +5,10 @@ using namespace std;
 
 NoABB::NoABB(int valor)
 {
-	this->valor = valor;
-	this->esq = NULL;
-	this->dir = NULL;
+    this->valor = valor;
+    this->esq = NULL;
+    this->dir = NULL;
+    this->height = 0;
 }
 
 NoABB::~NoABB()
@@ -44,6 +45,16 @@ void NoABB::setEsq(NoABB* no)
 void NoABB::setDir(NoABB* no)
 {
 	this->dir = no;
+}
+
+int NoABB::getHeight()
+{
+    return this->height;
+}
+
+void NoABB::setHeight(int height)
+{
+    this->height = height;
 }
 
 void NoABB::insere(int valor)
@@ -340,8 +351,11 @@ void NoABB::somaENosNoNivel(int nivel, int nivelAtual, int& soma, int& contadorN
 
 void NoABB::imprimeAlturaNos()
 {
+    // Calcula a altura do nó atual e salva no campo height
+    this->height = this->altura();
+    
     // Imprime o valor e a altura do nó atual
-    cout << "No " << this->valor << ": altura = " << this->altura() << endl;
+    cout << "No " << this->valor << ": altura = " << this->height << endl;
     
     // Percorre a subárvore esquerda
     if (this->esq != NULL)
