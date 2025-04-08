@@ -306,19 +306,27 @@ int NoABB::maioresQue(int valor)
 {
     int contador = 0;
     
-    // Verifica se o nó atual tem valor maior que o parâmetro
-    if (this->valor > valor)
-        contador = 1;
+    // Se o valor atual é menor ou igual ao parâmetro
+    if (this->valor <= valor)
+    {
+        // Só precisamos verificar a subárvore direita, pois toda a subárvore
+        // esquerda terá valores menores ou iguais ao nó atual
+        if (this->dir != NULL)
+            contador += this->dir->maioresQue(valor);
+    }
+    // Se o valor atual é maior que o parâmetro
     else
-        contador = 0;
-    
-    // Verifica a subárvore esquerda
-    if (this->esq != NULL)
-        contador += this->esq->maioresQue(valor);
-    
-    // Verifica a subárvore direita
-    if (this->dir != NULL)
-        contador += this->dir->maioresQue(valor);
+    {
+        // Contamos o nó atual
+        contador = 1;
+        
+        // Precisamos verificar ambas as subárvores
+        if (this->esq != NULL)
+            contador += this->esq->maioresQue(valor);
+        
+        if (this->dir != NULL)
+            contador += this->dir->maioresQue(valor);
+    }
     
     return contador;
 }
